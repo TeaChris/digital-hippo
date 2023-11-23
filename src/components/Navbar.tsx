@@ -6,10 +6,13 @@ import { Icons } from './Icons'
 import { buttonVariants } from './ui/button'
 import Cart from './Cart'
 import UserAccountNav from './UserAccountNav'
+import { cookies } from 'next/headers'
+import { getServerSideUser } from '@/lib/payload-utils'
 
-const user = null
+export default async function Navbar() {
+  const nextCookies = cookies()
+  const { user } = await getServerSideUser(nextCookies)
 
-export default function Navbar() {
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
       <header className="relative bg-white">
@@ -46,8 +49,7 @@ export default function Navbar() {
                   )}
 
                   {user ? (
-                    // <UserAccountNav user={user} />
-                    <div>sign in</div>
+                    <UserAccountNav user={user} />
                   ) : (
                     <Link
                       href="/sign-up"
