@@ -55,7 +55,7 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: '@joshtriedcoding',
+      creator: '@yourdevbermuda',
     },
     icons,
     metadataBase: new URL(
