@@ -121,6 +121,9 @@ dependencies:
     version: 4.4.6(@types/react@18.2.37)(react@18.2.0)
 
 devDependencies:
+  '@types/body-parser':
+    specifier: ^1.19.5
+    version: 1.19.5
   '@types/express':
     specifier: ^4.17.21
     version: 4.17.21
